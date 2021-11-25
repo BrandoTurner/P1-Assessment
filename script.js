@@ -12,16 +12,36 @@ const carBrands = [
   { brand: "Nissan", model: "frontier", type: "pickup" },
 ];
 
+ let sedan = carBrands.filter(car =>  car.type === "sedan")
+console.log(sedan)
+
+
+
 /* 2.
  * reverseString takes a string
  * and should return the reverse of the string, you cannot use .reverse method
  * e.g., reverseString('cat') => 'tac'
  */
 
+function reverseString(string) {
+ let newString = "";
+ for (let i = string.length - 1; i >= 0; i--) {
+   newString += string[i];
+ }
+ return newString;
+ }
+reverseString('cat')
+}
 // 3.
 // Write a function that takes an array of strings,
 // and returns the longest string in the array
 
+let longestString = stringArray.reduce(function (a, b) {
+  return a.length > b.length ? a : b
+})
+  
+
+}
 // 4.
 // Using Reduce,
 // Given an array of all your wishlist items, figure out
@@ -36,7 +56,11 @@ let wishlist = [
   { title: "tesla", price: 2000 },
   { title: "tesla", price: 90000 },
 ];
-function shop(arr) {}
+function shop(arr) { 
+  let total = arr.reduce((a, b)=>  + a + b.price, 0);
+  return total
+  
+}
 console.log(shop(wishlist));
 
 // 5.
@@ -44,6 +68,16 @@ console.log(shop(wishlist));
 // give an example of a recursive algorithm, and explain how it works
 //Make sure to detail the steps that make up a recursive algorithm
 // A detailed explanation.
+
+//  Recursion is when the process of a function involves calling on itself.
+//This can best be pictured by playing with a Matryoshka Doll
+//factorial(num) => return num * factorial(num-1)
+
+		factorial(5) {
+			If (num == 0 || num == 1) 
+				Return 1;
+					}else{
+ Return 5 * factorial(4)    					}			
 
 
 //6. OOP has 4 pillars and we learned about each in this phase. 
